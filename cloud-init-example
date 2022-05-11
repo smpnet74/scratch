@@ -6,6 +6,7 @@ packages:
 runcmd:
  - echo | sudo -H -u ubuntu bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
  - echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/ubuntu/.profile
- - brew install arkade
- - brew install node
- - brew install pulumi
+ - eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+ - su -c 'brew install arkade' - ubuntu
+ - su -c 'brew install node' - ubuntu
+ - su -c 'brew install pulumi' - ubuntu
