@@ -1,0 +1,11 @@
+#cloud-config
+package_update: true
+packages:
+ - build-essential
+ - wget
+runcmd:
+ - echo | sudo -H -u ubuntu bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+ - echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/ubuntu/.profile
+ - brew install arkade
+ - brew install node
+ - brew install pulumi
